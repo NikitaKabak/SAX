@@ -10,7 +10,6 @@ public class Main {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         SAXPars pars = new SAXPars();
-        pars.startDocument();
         try {
             parser.parse("books.xml",pars);
         } catch (IOException e) {
