@@ -30,38 +30,33 @@ public class SAXPars extends DefaultHandler{
     public void characters (char ch[], int start, int length)
     {
         System.out.print("Characters:   \"");
+        StringBuilder character = new StringBuilder();
+
         for (int i = start; i < start + length; i++) {
             switch (ch[i]) {
                 case '\\':
-                    System.out.print("\\\\");
+                    character.append("\\\\");
                     break;
                 case '"':
-                    System.out.print("\\\"");
+                    character.append("\\\"");
                     break;
                 case '\n':
-                    System.out.print("\\n");
+                    character.append("\\n");
                     break;
                 case '\r':
-                    System.out.print("\\r");
+                    character.append("\\r");
                     break;
                 case '\t':
-                    System.out.print("\\t");
+                    character.append("\\t");
                     break;
                 default:
-                    System.out.print(ch[i]);
+                    character.append(ch[i]);
                     break;
             }
-
-            {
-
-            }
         }
+        System.out.print(character.toString().trim());
         System.out.print("\"\n");
     }
-    public void ignorableWhitespace (char ch[], int start, int length)
-            throws SAXException
-    {
 
-    }
 
 }
